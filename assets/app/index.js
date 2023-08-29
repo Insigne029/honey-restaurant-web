@@ -1,7 +1,13 @@
 const header = document.querySelector(".primary-header");
 const navLinks = document.querySelector(".nav-links");
 const navToggle = document.querySelector(".nav-toggle");
+const preloader = document.querySelector(".preloader");
 let headerHeight = "";
+
+window.addEventListener("load", () => {
+  // Remove preloader
+  preloader.classList.add("close-preloader");
+});
 
 // sticky header
 window.addEventListener("scroll", () => {
