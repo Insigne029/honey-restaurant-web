@@ -178,6 +178,11 @@ h6 {
   white-space: normal !important;
 }
 
+/* Remove default scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
 /* Global css styling begins */
 
 body {
@@ -418,6 +423,11 @@ body {
     transition: height 700ms linear;
   }
 
+  .primary-header nav .nav-links a {
+    padding-left: 0.5em;
+    border-left: 2px solid var(--main-clr);
+  }
+
   .primary-header nav .mobile-open {
     padding: 2em 1em;
     height: auto;
@@ -431,9 +441,9 @@ body {
 
 .banner {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 150px;
-  padding-bottom: 100px;
+  padding-bottom: 3em;
   position: relative;
 }
 
@@ -445,10 +455,10 @@ body {
 }
 
 .banner .banner-container .banner-text h1 {
-  font-size: min(2rem, var(--big-font));
+  font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1em;
-  text-align: center;
+  text-align: left;
   line-height: 1.2;
 }
 
@@ -735,3 +745,127 @@ body {
 }
 
 /* Reviews section ends */
+
+/* Contact section begins */
+
+.contact {
+  padding-block: 3em 1em;
+}
+
+.contact .contact-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.contact .contact-content .contact-img {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4em;
+  text-align: center;
+  margin-bottom: 5em;
+}
+
+.contact .contact-content .contact-img img {
+  width: 100%;
+  max-width: 200px;
+  cursor: pointer;
+  transition: all 250ms ease;
+}
+
+.contact .contact-content .contact-img img:hover {
+  transform: scale(0.9);
+}
+
+.contact .contact-content .contact-text {
+  text-align: center;
+  margin-bottom: 4em;
+}
+
+.contact .contact-content .contact-text h2 {
+  font-size: var(--h2-font);
+  margin-bottom: 0.2em;
+}
+
+.contact .contact-content .contact-text p {
+  color: var(--second-clr);
+  font-size: var(--p-font);
+  max-width: 950px;
+  margin-bottom: 3em;
+}
+
+.contact .contact-content .contact-text .socials i {
+  display: inline-flex;
+  font-size: 2rem;
+  color: var(--second-clr);
+  margin-inline: 0.5em;
+  transition: all 500ms ease;
+}
+
+.contact .contact-content .contact-text .socials .clr i {
+  color: var(--main-clr);
+}
+
+.contact .contact-content .contact-text .socials i:hover {
+  color: var(--main-clr);
+}
+
+.contact .contact-content .details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3em;
+}
+
+.contact .contact-content .details .main-d a {
+  display: flex;
+  align-items: center;
+  color: var(--text-clr);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.contact .contact-content .details .main-d a i {
+  vertical-align: middle;
+  margin-right: 0.3em;
+  font-size: 1rem;
+  color: var(--main-clr);
+}
+
+.scroll-top {
+  width: 2em;
+  height: 2em;
+  justify-content: center;
+  align-items: center;
+  background: var(--main-clr);
+  color: var(--bg-clr);
+  font-size: 2rem;
+  border-radius: 0.5em;
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  animation: scroll-top-bounce 2500ms linear infinite;
+  z-index: 999;
+  display: none;
+}
+
+.show-scroll-top {
+  display: flex !important;
+}
+
+@keyframes scroll-top-bounce {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Contact section ends */
